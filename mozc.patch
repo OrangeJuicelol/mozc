@@ -1,0 +1,33 @@
+diff -ura mozc.orig/src/prediction/zero_query_dict.h mozc-ut/src/prediction/zero_query_dict.h
+--- mozc.orig/src/prediction/zero_query_dict.h	2018-05-27 12:14:39.000000000 +0200
++++ mozc-ut/src/prediction/zero_query_dict.h	2018-05-27 12:16:53.158743824 +0200
+@@ -132,6 +132,17 @@
+       return tmp;
+     }
+ 
++    iterator &operator--() {
++      ptr_ -= kTokenByteSize;
++      return *this;
++    }
++
++    iterator operator--(int) {
++      const iterator tmp(ptr_, string_array_);
++      ptr_ -= kTokenByteSize;
++      return tmp;
++    }
++
+     iterator &operator+=(ptrdiff_t n) {
+       ptr_ += n * kTokenByteSize;
+       return *this;
+diff -ura mozc.orig/src/unix/ibus/property_handler.cc mozc-ut/src/unix/ibus/property_handler.cc
+--- mozc.orig/src/unix/ibus/property_handler.cc	2018-05-27 12:14:39.000000000 +0200
++++ mozc-ut/src/unix/ibus/property_handler.cc	2018-05-27 12:17:47.877919034 +0200
+@@ -80,7 +80,7 @@
+ // On IBus 1.4.x, IBus expects that an IME should always be turned on and
+ // IME on/off keys are handled by IBus itself rather than each IME.
+ #if IBUS_CHECK_VERSION(1, 5, 0)
+-const bool kActivatedOnLaunch = false;
++const bool kActivatedOnLaunch = true;
+ #else
+ const bool kActivatedOnLaunch = true;
+ #endif  // IBus>=1.5.0
