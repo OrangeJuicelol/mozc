@@ -4,7 +4,7 @@ Author: Mitsuya Shibata <mty.shibata@gmail.com>
 
 Index: mozc-ut/src/data/dictionary_oss/dictionary08.txt
 ===================================================================
---- mozc-ut/src/data/dictionary_oss/dictionary08.txt
+--- mozc-ut.orig/src/data/dictionary_oss/dictionary08.txt
 +++ mozc-ut/src/data/dictionary_oss/dictionary08.txt
 @@ -8591,6 +8591,8 @@
  れいれいと	12	12	7349	れいれいと
@@ -17,7 +17,7 @@ Index: mozc-ut/src/data/dictionary_oss/dictionary08.txt
  れいんず	1917	1917	3548	レインズ
 Index: mozc-ut/src/data/symbol/symbol.tsv
 ===================================================================
---- mozc-ut/src/data/symbol/symbol.tsv
+--- mozc-ut.orig/src/data/symbol/symbol.tsv
 +++ mozc-ut/src/data/symbol/symbol.tsv
 @@ -528,6 +528,7 @@ POS	CHAR	Reading (space separated)	descr
  記号	㊦	した げ	丸下
@@ -29,7 +29,7 @@ Index: mozc-ut/src/data/symbol/symbol.tsv
  記号	㍽	たいしょう  ねんごう	年号		OTHER
 Index: mozc-ut/src/data/unicode/UnicodeData.txt
 ===================================================================
---- mozc-ut/src/data/unicode/UnicodeData.txt
+--- mozc-ut.orig/src/data/unicode/UnicodeData.txt
 +++ mozc-ut/src/data/unicode/UnicodeData.txt
 @@ -11314,6 +11314,7 @@
  32FC;CIRCLED KATAKANA WI;So;0;L;<circle> 30F0;;;;N;;;;;
@@ -41,7 +41,7 @@ Index: mozc-ut/src/data/unicode/UnicodeData.txt
  3302;SQUARE ANPEA;So;0;L;<square> 30A2 30F3 30DA 30A2;;;;N;SQUARED ANPEA;;;;
 Index: mozc-ut/src/rewriter/date_rewriter.cc
 ===================================================================
---- mozc-ut/src/rewriter/date_rewriter.cc
+--- mozc-ut.orig/src/rewriter/date_rewriter.cc
 +++ mozc-ut/src/rewriter/date_rewriter.cc
 @@ -1239,6 +1239,10 @@ const YearData kEraData[] = {
      1989,
@@ -56,7 +56,7 @@ Index: mozc-ut/src/rewriter/date_rewriter.cc
  
 Index: mozc-utg/src/rewriter/date_rewriter_test.cc
 ===================================================================
---- mozc-ut/src/rewriter/date_rewriter_test.cc
+--- mozc-ut.orig/src/rewriter/date_rewriter_test.cc
 +++ mozc-ut/src/rewriter/date_rewriter_test.cc
 @@ -469,6 +469,22 @@ TEST_F(DateRewriterTest, ADToERA) {
                   "平成10",
